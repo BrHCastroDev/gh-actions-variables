@@ -1,0 +1,14 @@
+name: Print Env Variables DEVELOPMENT
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  print_env_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Executar Print Env Variables - DEVELOPMENT'
+        uses: BrHCastroDev/print-env-action@v1
+        with:
+          environment: 'DEVELOPMENT'
