@@ -1,0 +1,23 @@
+name: Print Env Variables
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  print_env:
+    runs-on: ubuntu-latest
+    environment: DEVELOPMENT
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print Env Variables
+        run: |
+          echo "Value of HOST: $REPOSITORY_VAR"
+          echo "Value of HOST SECRET: $REPOSITORY_SEC"
+        env:
+          REPOSITORY_VAR: ${{ vars.HOST }}
+          REPOSITORY_GLOB: ${{ vars.URL_GLOBAL }}
+          REPOSITORY_SEC: ${{ secrets.HOST_SECRET }}
