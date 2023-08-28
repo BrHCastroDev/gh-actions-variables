@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Executar Print Env Variables - PRODUCTION'
-        uses: BrHCastroDev/print-env-action@v1
+        uses: BrHCastroDev/print-env-action@main
         with:
           environment: 'PRODUCTION'
